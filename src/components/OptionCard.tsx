@@ -1,0 +1,48 @@
+import { Card } from '@/components/ui/card';
+import { AudioPlayer } from '@/components/AudioPlayer';
+import { MouseEvent } from 'react';
+
+interface OptionCardProps {
+  icon: string;
+  text: string;
+  notice?: string;
+  language: string;
+  onClick: () => void;
+}
+
+export function OptionCard({ icon, text, notice, language, onClick }: OptionCardProps) {
+  const handleAudioClick = (e: MouseEvent) => {
+    e.stopPropagation();
+  };
+
+  return (
+    <Card 
+      className="group hover:shadow-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1"
+      onClick={onClick}
+    >
+      <div className="p-6 md:p-8 space-y-4">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <div className="flex items-center gap-4 flex-1 w-full">
+            <span className="text-3xl sm:text-4xl md:text-5xl shrink-0">{icon}</span>
+            <span className="text-base sm:text-lg md:text-xl font-medium flex-1 text-start">
+              {text}
+            </span>
+          </div>
+          <div 
+            className="ml-auto w-full sm:w-auto flex justify-end"
+            onClick={handleAudioClick}
+          >
+            <AudioPlayer text={text} language={language} />
+          </div>
+        </div>
+        {notice && (
+          <div className="border-t pt-4">
+            <p className="text-sm text-muted-foreground text-start">
+              {notice}
+            </p>
+          </div>
+        )}
+      </div>
+    </Card>
+  );
+}
