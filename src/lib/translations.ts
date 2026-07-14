@@ -15,6 +15,18 @@ export const translations = {
     changeEmployer: "I work in Libya and I want to change employer",
     leaveLibya: "I work in Libya and I want to leave the country",
     workPermitRenewal: "I work in Libya and want to renew my work permit and residence visa",
+    chatIntro: {
+      title: "This is a platform for the regularization of foreign workers. Describe your situation",
+      placeholder: "Describe your situation here...",
+      send: "Send",
+      dictate: "Dictate your situation",
+      stopDictation: "Stop dictation",
+      listening: "Listening...",
+      micUnsupported: "Voice dictation is not supported by your browser.",
+      noMatch: "We couldn't identify your situation. Please choose one of the cases below.",
+      suggestionFound: "Based on your description, this case seems to match your situation:",
+      suggestionsLabel: "Or choose your situation:"
+    },
     visaRenewalNotice: "The residence visa renewal request must be submitted 60 days before expiration. For work permits, if it expires, it must be renewed. If not, the visa is cancelled.",
     workPermitRenewalFlow: {
       initialQuestion: {
@@ -189,6 +201,18 @@ export const translations = {
     changeEmployer: "Je travaille en Libye et je souhaite changer d'employeur",
     leaveLibya: "Je travaille en Libye et je souhaite quitter le pays",
     workPermitRenewal: "Je travaille en Libye et je souhaite renouveler mon permis de travail et mon visa de résidence",
+    chatIntro: {
+      title: "Ceci est une plateforme pour la régularisation des travailleurs étrangers. Décrivez votre situation",
+      placeholder: "Décrivez votre situation ici...",
+      send: "Envoyer",
+      dictate: "Dicter votre situation",
+      stopDictation: "Arrêter la dictée",
+      listening: "Écoute en cours...",
+      micUnsupported: "La dictée vocale n'est pas prise en charge par votre navigateur.",
+      noMatch: "Nous n'avons pas pu identifier votre situation. Veuillez choisir l'un des cas ci-dessous.",
+      suggestionFound: "D'après votre description, ce cas semble correspondre à votre situation :",
+      suggestionsLabel: "Ou choisissez votre situation :"
+    },
     visaRenewalNotice: "La demande de renouvellement du visa de résidence doit être soumise 60 jours avant son expiration. Pour le permis travail, s'il expire, il doit être renouvelé. Si ce n'est pas le cas, le visa est annulé",
     workPermitRenewalFlow: {
       initialQuestion: {
@@ -363,6 +387,18 @@ export const translations = {
     changeEmployer: "أعمل في ليبيا وأريد تغيير صاحب العمل",
     leaveLibya: "أعمل في ليبيا وأريد مغادرة البلاد",
     workPermitRenewal: "أعمل في ليبيا وأريد تجديد تصريح العمل وتأشيرة الإقامة",
+    chatIntro: {
+      title: "هذه منصة لتسوية أوضاع العمال الأجانب. صف وضعك",
+      placeholder: "صف وضعك هنا...",
+      send: "إرسال",
+      dictate: "أملِ وضعك",
+      stopDictation: "إيقاف الإملاء",
+      listening: "جارٍ الاستماع...",
+      micUnsupported: "الإملاء الصوتي غير مدعوم في متصفحك.",
+      noMatch: "لم نتمكن من تحديد وضعك. يرجى اختيار إحدى الحالات أدناه.",
+      suggestionFound: "بناءً على وصفك، يبدو أن هذه الحالة تناسب وضعك:",
+      suggestionsLabel: "أو اختر وضعك:"
+    },
     visaRenewalNotice: "يجب تقديم طلب تجديد تأشيرة الإقامة قبل 60 يوماً من انتهائها. بالنسبة لتصريح العمل، إذا انتهت صلاحيته، يجب تجديده. إذا لم يتم ذلك، تُلغى التأشيرة",
     workPermitRenewalFlow: {
       initialQuestion: {

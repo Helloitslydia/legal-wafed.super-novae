@@ -1,6 +1,5 @@
-import { translations } from '@/lib/translations';
-import { OptionCard } from './OptionCard';
 import { useOptions } from '@/hooks/useOptions';
+import { SituationChat } from './SituationChat';
 import { RegularizationFlow } from './RegularizationFlow';
 import { VisaEntryInfo } from './VisaEntryInfo';
 import { EmployerChangeFlow } from './EmployerChangeFlow';
@@ -16,7 +15,6 @@ interface OptionsGridProps {
 
 export function OptionsGrid({ language }: OptionsGridProps) {
   const { options, selectedOption, handleOptionClick, handleBack } = useOptions();
-  const t = translations[language];
 
   if (selectedOption === 'initialWork') {
     return <VisaEntryInfo language={language} onBack={handleBack} />;
@@ -43,17 +41,10 @@ export function OptionsGrid({ language }: OptionsGridProps) {
   }
 
   return (
-    <div className="grid grid-cols-1 gap-4 md:gap-6">
-      {options.map(({ key, icon }) => (
-        <OptionCard
-          key={key}
-          icon={icon}
-          text={t[key]}
-          notice={undefined}
-          language={language}
-          onClick={() => handleOptionClick(key)}
-        />
-      ))}
-    </div>
+    <SituationChat
+      language={language}
+      options={options}
+      onSelect={handleOptionClick}
+    />
   );
 }
