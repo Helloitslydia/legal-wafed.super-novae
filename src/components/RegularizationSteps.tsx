@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { AudioPlayer } from './AudioPlayer';
+import { FlowNavigation } from './FlowNavigation';
+import { FlowWarning } from './FlowWarning';
 import { regularizationFlows } from '@/data/regularizationFlows';
 import { translations } from '@/lib/translations';
 
@@ -65,21 +66,14 @@ export function RegularizationSteps({ path, language, onBack }: RegularizationSt
             <AudioPlayer text={t.success} language={language} />
           </div>
 
-          <div className="flex justify-between">
-            <Button onClick={onBack} className="text-base">
-              {t.home}
-            </Button>
-            <Button
-              onClick={() => {
-                setShowResidenceVisa(false);
-                setShowWarning(false);
-              }}
-              variant="outline"
-              className="text-base"
-            >
-              {t.previous}
-            </Button>
-          </div>
+          <FlowNavigation
+            language={language}
+            onHome={onBack}
+            onPrevious={() => {
+              setShowResidenceVisa(false);
+              setShowWarning(false);
+            }}
+          />
         </div>
       </Card>
     );
@@ -114,11 +108,6 @@ export function RegularizationSteps({ path, language, onBack }: RegularizationSt
                         ? (language === 'ar' ? 'نعم' : language === 'fr' ? 'Oui' : 'Yes')
                         : (language === 'ar' ? 'لا' : language === 'fr' ? 'Non' : 'No')}
                     </p>
-                    {option === 'no' && showWarning && (
-                      <p className="mt-2 text-sm text-muted-foreground">
-                        {t.visaStatus.residenceWarning}
-                      </p>
-                    )}
                   </div>
                   <AudioPlayer
                     text={option === 'yes' 
@@ -131,21 +120,18 @@ export function RegularizationSteps({ path, language, onBack }: RegularizationSt
             ))}
           </div>
 
-          <div className="flex justify-between">
-            <Button onClick={onBack} className="text-base">
-              {t.home}
-            </Button>
-            <Button
-              onClick={() => {
-                setShowResidenceVisa(false);
-                setShowWarning(false);
-              }}
-              variant="outline"
-              className="text-base"
-            >
-              {t.previous}
-            </Button>
-          </div>
+          {showWarning && (
+            <FlowWarning message={t.visaStatus.residenceWarning} language={language} />
+          )}
+
+          <FlowNavigation
+            language={language}
+            onHome={onBack}
+            onPrevious={() => {
+              setShowResidenceVisa(false);
+              setShowWarning(false);
+            }}
+          />
         </div>
       </Card>
     );
@@ -178,11 +164,6 @@ export function RegularizationSteps({ path, language, onBack }: RegularizationSt
                     <p className="text-base md:text-lg font-medium group-hover:text-primary transition-colors">
                       {t.finalContract[option]}
                     </p>
-                    {option === 'no' && showWarning && (
-                      <p className="mt-2 text-sm text-muted-foreground">
-                        {t.finalContract.warning}
-                      </p>
-                    )}
                   </div>
                   <AudioPlayer
                     text={t.finalContract[option]}
@@ -193,22 +174,19 @@ export function RegularizationSteps({ path, language, onBack }: RegularizationSt
             ))}
           </div>
 
-          <div className="flex justify-between">
-            <Button onClick={onBack} className="text-base">
-              {t.home}
-            </Button>
-            <Button
-              onClick={() => {
-                setShowContract(false);
-                setShowVisa(true);
-                setShowWarning(false);
-              }}
-              variant="outline"
-              className="text-base"
-            >
-              {t.previous}
-            </Button>
-          </div>
+          {showWarning && (
+            <FlowWarning message={t.finalContract.warning} language={language} />
+          )}
+
+          <FlowNavigation
+            language={language}
+            onHome={onBack}
+            onPrevious={() => {
+              setShowContract(false);
+              setShowVisa(true);
+              setShowWarning(false);
+            }}
+          />
         </div>
       </Card>
     );
@@ -241,11 +219,6 @@ export function RegularizationSteps({ path, language, onBack }: RegularizationSt
                     <p className="text-base md:text-lg font-medium group-hover:text-primary transition-colors">
                       {t.hasVisa[option]}
                     </p>
-                    {option === 'no' && showWarning && (
-                      <p className="mt-2 text-sm text-muted-foreground">
-                        {t.hasVisa.warning}
-                      </p>
-                    )}
                   </div>
                   <AudioPlayer
                     text={t.hasVisa[option]}
@@ -256,18 +229,15 @@ export function RegularizationSteps({ path, language, onBack }: RegularizationSt
             ))}
           </div>
 
-          <div className="flex justify-between">
-            <Button onClick={onBack} className="text-base">
-              {t.home}
-            </Button>
-            <Button
-              onClick={() => setShowVisa(false)}
-              variant="outline"
-              className="text-base"
-            >
-              {t.previous}
-            </Button>
-          </div>
+          {showWarning && (
+            <FlowWarning message={t.hasVisa.warning} language={language} />
+          )}
+
+          <FlowNavigation
+            language={language}
+            onHome={onBack}
+            onPrevious={() => setShowVisa(false)}
+          />
         </div>
       </Card>
     );
@@ -314,9 +284,6 @@ export function RegularizationSteps({ path, language, onBack }: RegularizationSt
                 <p className="text-base md:text-lg font-medium group-hover:text-primary transition-colors">
                   {flow.steps[0].options.b[language]}
                 </p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  {flow.steps[0].options.warning[language]}
-                </p>
               </div>
               <AudioPlayer
                 text={flow.steps[0].options.b[language]}
@@ -326,11 +293,9 @@ export function RegularizationSteps({ path, language, onBack }: RegularizationSt
           </Card>
         </div>
 
-        <div className="flex justify-between">
-          <Button onClick={onBack} className="text-base">
-            {t.home}
-          </Button>
-        </div>
+        <FlowWarning message={flow.steps[0].options.warning[language]} language={language} />
+
+        <FlowNavigation language={language} onHome={onBack} />
       </div>
     </Card>
   );

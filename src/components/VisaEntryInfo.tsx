@@ -1,7 +1,7 @@
 import { Card } from '@/components/ui/card';
 import { AudioPlayer } from './AudioPlayer';
+import { FlowNavigation } from './FlowNavigation';
 import { translations } from '@/lib/translations';
-import { Button } from './ui/button';
 
 interface VisaEntryInfoProps {
   language: string;
@@ -39,11 +39,7 @@ export function VisaEntryInfo({ language, onBack }: VisaEntryInfoProps) {
           </div>
         </div>
 
-        <div className="flex justify-between">
-          <Button onClick={onBack} className="text-base">
-            {t.home}
-          </Button>
-        </div>
+        <FlowNavigation language={language} onHome={onBack} />
       </div>
     </Card>
   );
