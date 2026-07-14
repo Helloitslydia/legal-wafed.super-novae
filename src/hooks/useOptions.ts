@@ -19,6 +19,7 @@ export function useOptions() {
 
   const handleBack = useCallback(() => {
     setSelectedOption(null);
+    window.location.reload();
   }, []);
 
   return { 
