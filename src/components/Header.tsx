@@ -18,7 +18,7 @@ export function Header({ language, onLanguageChange }: HeaderProps) {
             <img
               src="https://0976be0a835bf13886cd1d6009c40e57.cdn.bubble.io/f1784051386598x566759155093209860/abvius-logo.png"
               alt="Logo"
-              className="h-7 sm:h-8 md:h-9 w-auto object-contain"
+              className="h-5 sm:h-6 md:h-7 w-auto object-contain"
             />
           </div>
           <div className="flex-1 flex justify-center">
