@@ -84,7 +84,7 @@ export function VisaRenewalFlow({ language, onBack }: VisaRenewalFlowProps) {
             {['residenceYes', 'residenceNo'].map((option) => (
               <Card
                 key={option}
-                className="p-4 md:p-6 hover:shadow-md transition-shadow cursor-pointer group"
+                className="p-4 md:p-6 cursor-pointer group transition-colors hover:border-primary/40 hover:bg-accent/40"
                 onClick={() => handleResidenceAnswer(option === 'residenceYes')}
               >
                 <div className="flex items-start gap-4">
@@ -139,7 +139,7 @@ export function VisaRenewalFlow({ language, onBack }: VisaRenewalFlowProps) {
               {['yes', 'no'].map((option) => (
                 <Card
                   key={option}
-                  className="p-4 md:p-6 hover:shadow-md transition-shadow cursor-pointer group"
+                  className="p-4 md:p-6 cursor-pointer group transition-colors hover:border-primary/40 hover:bg-accent/40"
                   onClick={() => handleAnswer(option === 'yes')}
                 >
                   <div className="flex items-start gap-4">
@@ -184,7 +184,7 @@ export function VisaRenewalFlow({ language, onBack }: VisaRenewalFlowProps) {
               ].map((option) => (
                 <Card
                   key={option.key}
-                  className="p-4 md:p-6 hover:shadow-md transition-shadow cursor-pointer group"
+                  className="p-4 md:p-6 cursor-pointer group transition-colors hover:border-primary/40 hover:bg-accent/40"
                   onClick={() => handleVisaStatus(option.key === 'expired')}
                 >
                   <div className="flex items-start gap-4">
@@ -203,10 +203,10 @@ export function VisaRenewalFlow({ language, onBack }: VisaRenewalFlowProps) {
 
         {step === 5 && (
           <div className="space-y-4">
-            <Card className="p-4 md:p-6">
+            <Card className={`p-4 md:p-6 ${showWarning ? 'border-amber-200 bg-amber-50' : 'border-green-200 bg-green-50'}`}>
               <div className="flex items-start gap-4">
                 <div className="flex-1">
-                  <p className="text-xl md:text-2xl font-semibold text-green-600">
+                  <p className={`text-lg md:text-xl font-medium leading-relaxed ${showWarning ? 'text-amber-900' : 'text-green-800'}`}>
                     {showWarning ? t.visaStatus.warning : t.visaStatus.success}
                   </p>
                 </div>

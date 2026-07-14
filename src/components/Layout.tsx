@@ -9,7 +9,7 @@ interface LayoutProps {
 
 export function Layout({ children, language, onLanguageChange }: LayoutProps) {
   return (
-    <div className={`min-h-screen bg-gray-50 ${language === 'ar' ? 'rtl' : 'ltr'}`}>
+    <div className={`min-h-screen bg-background ${language === 'ar' ? 'rtl' : 'ltr'}`}>
       <Header 
         language={language}
         onLanguageChange={onLanguageChange}

@@ -58,7 +58,7 @@ export function RegularizationSteps({ path, language, onBack }: RegularizationSt
         <div className="space-y-6">
           <div className="flex items-start gap-4">
             <div className="flex-1">
-              <p className="text-xl md:text-2xl font-semibold text-green-600">
+              <p className="text-lg md:text-xl font-medium text-green-800 leading-relaxed">
                 {t.success}
               </p>
             </div>
@@ -98,7 +98,7 @@ export function RegularizationSteps({ path, language, onBack }: RegularizationSt
             {['yes', 'no'].map((option) => (
               <Card
                 key={option}
-                className="p-4 md:p-6 hover:shadow-md transition-shadow cursor-pointer group"
+                className="p-4 md:p-6 cursor-pointer group transition-colors hover:border-primary/40 hover:bg-accent/40"
                 onClick={() => handleResidenceVisaAnswer(option === 'yes')}
               >
                 <div className="flex items-start gap-4">
@@ -158,7 +158,7 @@ export function RegularizationSteps({ path, language, onBack }: RegularizationSt
             {['yes', 'no'].map((option) => (
               <Card
                 key={option}
-                className="p-4 md:p-6 hover:shadow-md transition-shadow cursor-pointer group"
+                className="p-4 md:p-6 cursor-pointer group transition-colors hover:border-primary/40 hover:bg-accent/40"
                 onClick={() => handleContractAnswer(option === 'yes')}
               >
                 <div className="flex items-start gap-4">
@@ -215,7 +215,7 @@ export function RegularizationSteps({ path, language, onBack }: RegularizationSt
             {['yes', 'no'].map((option) => (
               <Card
                 key={option}
-                className="p-4 md:p-6 hover:shadow-md transition-shadow cursor-pointer group"
+                className="p-4 md:p-6 cursor-pointer group transition-colors hover:border-primary/40 hover:bg-accent/40"
                 onClick={() => handleVisaAnswer(option === 'yes')}
               >
                 <div className="flex items-start gap-4">
@@ -265,7 +265,7 @@ export function RegularizationSteps({ path, language, onBack }: RegularizationSt
 
         <div className="space-y-4">
           <Card
-            className="p-4 md:p-6 hover:shadow-md transition-shadow cursor-pointer group"
+            className="p-4 md:p-6 cursor-pointer group transition-colors hover:border-primary/40 hover:bg-accent/40"
             onClick={handleOptionSelect}
           >
             <div className="flex items-start gap-4">
@@ -281,7 +281,7 @@ export function RegularizationSteps({ path, language, onBack }: RegularizationSt
             </div>
           </Card>
           <Card
-            className="p-4 md:p-6 hover:shadow-md transition-shadow cursor-pointer group"
+            className="p-4 md:p-6 cursor-pointer group transition-colors hover:border-primary/40 hover:bg-accent/40"
           >
             <div className="flex items-start gap-4">
               <div className="flex-1">
