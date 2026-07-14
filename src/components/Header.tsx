@@ -13,14 +13,14 @@ export function Header({ language, onLanguageChange }: HeaderProps) {
   const t = translations[language];
 
   return (
-    <header className="w-full bg-card border-b shadow-sm sticky top-0 z-10">
-      <div className="container mx-auto px-4 py-4 md:py-6">
+    <header className="w-full bg-background/90 backdrop-blur border-b border-border/60 sticky top-0 z-10">
+      <div className="container mx-auto px-4 py-4 md:py-5">
         <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
           <div className="flex items-center gap-4">
             <Button
-              variant="ghost"
+              variant="outline"
               size="icon"
-              className="h-12 w-12"
+              className="rounded-full h-12 w-12 shrink-0"
               asChild
             >
               <a
@@ -29,25 +29,25 @@ export function Header({ language, onLanguageChange }: HeaderProps) {
                 rel="noopener noreferrer"
                 aria-label="Tandem Project"
               >
-                <ArrowLeft className="h-6 w-6" />
+                <ArrowLeft className="h-5 w-5" />
               </a>
             </Button>
-            <img 
-              src="//af394c170e9ffeadce0ce4575f7674d3.cdn.bubble.io/f1687853232507x652947107625050400/logo%20SN.png" 
+            <img
+              src="https://0976be0a835bf13886cd1d6009c40e57.cdn.bubble.io/f1784051386598x566759155093209860/abvius-logo.png"
               alt="Logo"
-              className="h-12 sm:h-14 md:h-16 w-auto object-contain"
+              className="h-10 sm:h-11 md:h-12 w-auto object-contain"
             />
           </div>
           <div className="flex-1 flex justify-center">
-            <h1 className="text-base sm:text-lg md:text-xl font-bold text-primary text-center max-w-[600px] leading-normal">
+            <h1 className="text-base sm:text-lg md:text-xl font-bold text-foreground tracking-tight text-center max-w-[600px] leading-normal">
               {t.title}
             </h1>
           </div>
           <div className="flex items-center gap-3 shrink-0">
             <AudioPlayer text={t.title} language={language} />
-            <LanguageSelector 
-              currentLanguage={language} 
-              onLanguageChange={onLanguageChange} 
+            <LanguageSelector
+              currentLanguage={language}
+              onLanguageChange={onLanguageChange}
             />
           </div>
         </div>

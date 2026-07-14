@@ -20,10 +20,14 @@ export function WorkPermitRenewalFlow({ language, onBack }: WorkPermitRenewalFlo
         {['yes', 'no'].map((option) => (
           <Card
             key={option}
-            className="p-4 md:p-6 cursor-pointer group transition-colors hover:border-primary/40 hover:bg-accent/40"
+            className="p-4 md:p-5 cursor-pointer group transition-colors hover:border-foreground/25 hover:bg-accent/40"
             onClick={() => option === 'yes' ? yesAction() : noAction()}
           >
-            <div className="flex items-start gap-4">
+            <div className="flex items-center gap-4">
+              <span
+                className="h-6 w-6 shrink-0 rounded-full border-2 border-border bg-card transition-colors group-hover:border-secondary-foreground/60"
+                aria-hidden="true"
+              />
               <div className="flex-1">
                 <p className="text-base md:text-lg font-medium group-hover:text-primary transition-colors">
                   {option === 'yes' 
@@ -52,8 +56,8 @@ export function WorkPermitRenewalFlow({ language, onBack }: WorkPermitRenewalFlo
       case 'initial':
         return (
           <>
-            <div className="flex items-start justify-between gap-4">
-              <h2 className="text-xl md:text-2xl font-semibold">{t.initialQuestion.question}</h2>
+            <div className="flex items-start justify-between gap-4 rounded-3xl bg-secondary p-5 md:p-6">
+              <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">{t.initialQuestion.question}</h2>
               <AudioPlayer text={t.initialQuestion.question} language={language} />
             </div>
             {renderChoices(
@@ -66,8 +70,8 @@ export function WorkPermitRenewalFlow({ language, onBack }: WorkPermitRenewalFlo
       case 'residenceRenewal':
         return (
           <>
-            <div className="flex items-start justify-between gap-4">
-              <h2 className="text-xl md:text-2xl font-semibold">{t.residenceRenewal.question}</h2>
+            <div className="flex items-start justify-between gap-4 rounded-3xl bg-secondary p-5 md:p-6">
+              <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">{t.residenceRenewal.question}</h2>
               <AudioPlayer text={t.residenceRenewal.question} language={language} />
             </div>
             {renderChoices(
@@ -80,8 +84,8 @@ export function WorkPermitRenewalFlow({ language, onBack }: WorkPermitRenewalFlo
       case 'newJobOffer':
         return (
           <>
-            <div className="flex items-start justify-between gap-4">
-              <h2 className="text-xl md:text-2xl font-semibold">{t.initialQuestion.warning}</h2>
+            <div className="flex items-start justify-between gap-4 rounded-3xl bg-secondary p-5 md:p-6">
+              <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">{t.initialQuestion.warning}</h2>
               <AudioPlayer text={t.initialQuestion.warning} language={language} />
             </div>
             {renderChoices(
@@ -95,8 +99,8 @@ export function WorkPermitRenewalFlow({ language, onBack }: WorkPermitRenewalFlo
       case 'laborApproval':
         return (
           <>
-            <div className="flex items-start justify-between gap-4">
-              <h2 className="text-xl md:text-2xl font-semibold">{t.laborApproval.question}</h2>
+            <div className="flex items-start justify-between gap-4 rounded-3xl bg-secondary p-5 md:p-6">
+              <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">{t.laborApproval.question}</h2>
               <AudioPlayer text={t.laborApproval.question} language={language} />
             </div>
             {renderChoices(
@@ -110,8 +114,8 @@ export function WorkPermitRenewalFlow({ language, onBack }: WorkPermitRenewalFlo
       case 'contract':
         return (
           <>
-            <div className="flex items-start justify-between gap-4">
-              <h2 className="text-xl md:text-2xl font-semibold">{t.contract.question}</h2>
+            <div className="flex items-start justify-between gap-4 rounded-3xl bg-secondary p-5 md:p-6">
+              <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">{t.contract.question}</h2>
               <AudioPlayer text={t.contract.question} language={language} />
             </div>
             {renderChoices(
@@ -125,8 +129,8 @@ export function WorkPermitRenewalFlow({ language, onBack }: WorkPermitRenewalFlo
       case 'fees':
         return (
           <>
-            <div className="flex items-start justify-between gap-4">
-              <h2 className="text-xl md:text-2xl font-semibold">{t.fees.question}</h2>
+            <div className="flex items-start justify-between gap-4 rounded-3xl bg-secondary p-5 md:p-6">
+              <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">{t.fees.question}</h2>
               <AudioPlayer text={t.fees.question} language={language} />
             </div>
             {renderChoices(
@@ -141,10 +145,10 @@ export function WorkPermitRenewalFlow({ language, onBack }: WorkPermitRenewalFlo
       case 'success':
         return (
           <div className="space-y-4">
-            <Card className="p-4 md:p-6 border-green-200 bg-green-50">
+            <Card className="p-5 md:p-6 border-transparent bg-secondary shadow-none">
               <div className="flex items-start gap-4">
                 <div className="flex-1">
-                  <p className="text-lg md:text-xl font-medium text-green-800 leading-relaxed">
+                  <p className="text-lg md:text-xl font-medium text-secondary-foreground leading-relaxed">
                     {step === 'residenceSuccess' ? t.residenceRenewal.success : t.fees.success}
                   </p>
                 </div>
@@ -160,7 +164,7 @@ export function WorkPermitRenewalFlow({ language, onBack }: WorkPermitRenewalFlo
       case 'residenceWarning':
         return (
           <div className="space-y-4">
-            <Card className="p-4 md:p-6 border-amber-200 bg-amber-50">
+            <Card className="p-5 md:p-6 border-transparent bg-amber-50 shadow-none">
               <div className="flex items-start gap-4">
                 <div className="flex-1">
                   <p className="text-lg md:text-xl font-medium text-amber-900 leading-relaxed">
@@ -179,7 +183,7 @@ export function WorkPermitRenewalFlow({ language, onBack }: WorkPermitRenewalFlo
       case 'noFees':
         return (
           <div className="space-y-4">
-            <Card className="p-4 md:p-6 border-amber-200 bg-amber-50">
+            <Card className="p-5 md:p-6 border-transparent bg-amber-50 shadow-none">
               <div className="flex items-start gap-4">
                 <div className="flex-1">
                   <p className="text-lg md:text-xl font-medium text-amber-900 leading-relaxed">
@@ -207,7 +211,7 @@ export function WorkPermitRenewalFlow({ language, onBack }: WorkPermitRenewalFlo
   };
 
   return (
-    <Card className="p-6 md:p-8">
+    <Card className="border-0 bg-transparent p-0 shadow-none">
       <div className="space-y-6">
         {renderStep()}
         <div className="flex justify-between">

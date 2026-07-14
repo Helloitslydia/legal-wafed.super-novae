@@ -36,10 +36,14 @@ export function EntryLegitimacyFlow({ language, onBack }: EntryLegitimacyFlowPro
         {['yes', 'no'].map((option) => (
           <Card
             key={option}
-            className="p-4 md:p-6 cursor-pointer group transition-colors hover:border-primary/40 hover:bg-accent/40"
+            className="p-4 md:p-5 cursor-pointer group transition-colors hover:border-foreground/25 hover:bg-accent/40"
             onClick={() => option === 'yes' ? yesAction() : noAction()}
           >
-            <div className="flex items-start gap-4">
+            <div className="flex items-center gap-4">
+              <span
+                className="h-6 w-6 shrink-0 rounded-full border-2 border-border bg-card transition-colors group-hover:border-secondary-foreground/60"
+                aria-hidden="true"
+              />
               <div className="flex-1">
                 <p className="text-base md:text-lg font-medium group-hover:text-primary transition-colors">
                   {option === 'yes' 
@@ -69,13 +73,13 @@ export function EntryLegitimacyFlow({ language, onBack }: EntryLegitimacyFlowPro
         return (
           <>
             <div className="space-y-4">
-              <div className="flex items-start gap-4">
-                <p className="flex-1 text-base whitespace-pre-line">{t.initialInfo.message}</p>
+              <div className="flex items-start gap-4 rounded-3xl bg-secondary p-5 md:p-6">
+                <p className="flex-1 text-secondary-foreground text-base whitespace-pre-line">{t.initialInfo.message}</p>
                 <AudioPlayer text={t.initialInfo.message} language={language} />
               </div>
             </div>
-            <div className="flex items-start justify-between gap-4 mt-6">
-              <h2 className="text-xl md:text-2xl font-semibold">{t.initialInfo.question}</h2>
+            <div className="flex items-start justify-between gap-4 rounded-3xl bg-secondary p-5 md:p-6 mt-6">
+              <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">{t.initialInfo.question}</h2>
               <AudioPlayer text={t.initialInfo.question} language={language} />
             </div>
             {renderChoices(
@@ -90,13 +94,13 @@ export function EntryLegitimacyFlow({ language, onBack }: EntryLegitimacyFlowPro
         return (
           <>
             <div className="space-y-4">
-              <div className="flex items-start gap-4">
-                <p className="flex-1 text-base whitespace-pre-line">{t.documents.message}</p>
+              <div className="flex items-start gap-4 rounded-3xl bg-secondary p-5 md:p-6">
+                <p className="flex-1 text-secondary-foreground text-base whitespace-pre-line">{t.documents.message}</p>
                 <AudioPlayer text={t.documents.message} language={language} />
               </div>
             </div>
-            <div className="flex items-start justify-between gap-4 mt-6">
-              <h2 className="text-xl md:text-2xl font-semibold">{t.documents.question}</h2>
+            <div className="flex items-start justify-between gap-4 rounded-3xl bg-secondary p-5 md:p-6 mt-6">
+              <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">{t.documents.question}</h2>
               <AudioPlayer text={t.documents.question} language={language} />
             </div>
             {renderChoices(
@@ -111,13 +115,13 @@ export function EntryLegitimacyFlow({ language, onBack }: EntryLegitimacyFlowPro
         return (
           <>
             <div className="space-y-4">
-              <div className="flex items-start gap-4">
-                <p className="flex-1 text-base whitespace-pre-line">{t.submission.message}</p>
+              <div className="flex items-start gap-4 rounded-3xl bg-secondary p-5 md:p-6">
+                <p className="flex-1 text-secondary-foreground text-base whitespace-pre-line">{t.submission.message}</p>
                 <AudioPlayer text={t.submission.message} language={language} />
               </div>
             </div>
-            <div className="flex items-start justify-between gap-4 mt-6">
-              <h2 className="text-xl md:text-2xl font-semibold">{t.submission.question}</h2>
+            <div className="flex items-start justify-between gap-4 rounded-3xl bg-secondary p-5 md:p-6 mt-6">
+              <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">{t.submission.question}</h2>
               <AudioPlayer text={t.submission.question} language={language} />
             </div>
             {renderChoices(
@@ -130,10 +134,10 @@ export function EntryLegitimacyFlow({ language, onBack }: EntryLegitimacyFlowPro
       case 'success':
         return (
           <div className="space-y-4">
-            <Card className="p-4 md:p-6 border-green-200 bg-green-50">
+            <Card className="p-5 md:p-6 border-transparent bg-secondary shadow-none">
               <div className="flex items-start gap-4">
                 <div className="flex-1">
-                  <p className="text-lg md:text-xl font-medium text-green-800 leading-relaxed">
+                  <p className="text-lg md:text-xl font-medium text-secondary-foreground leading-relaxed">
                     {t.submission.success}
                   </p>
                 </div>
@@ -146,7 +150,7 @@ export function EntryLegitimacyFlow({ language, onBack }: EntryLegitimacyFlowPro
       case 'failure':
         return (
           <div className="space-y-4">
-            <Card className="p-4 md:p-6 border-amber-200 bg-amber-50">
+            <Card className="p-5 md:p-6 border-transparent bg-amber-50 shadow-none">
               <div className="flex items-start gap-4">
                 <div className="flex-1">
                   <p className="text-lg md:text-xl font-medium text-amber-900 leading-relaxed">
@@ -162,7 +166,7 @@ export function EntryLegitimacyFlow({ language, onBack }: EntryLegitimacyFlowPro
   };
 
   return (
-    <Card className="p-6 md:p-8">
+    <Card className="border-0 bg-transparent p-0 shadow-none">
       <div className="space-y-6">
         {renderStep()}
         <div className="flex justify-between">

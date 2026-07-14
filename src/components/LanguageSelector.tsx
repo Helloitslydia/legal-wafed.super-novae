@@ -22,12 +22,12 @@ export function LanguageSelector({ currentLanguage, onLanguageChange }: Language
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button 
-          variant="outline" 
+        <Button
+          variant="outline"
           size="icon"
-          className="h-12 w-12 md:h-14 md:w-14 rounded-full shrink-0 text-2xl md:text-3xl"
+          className="h-12 w-12 md:h-14 md:w-14 rounded-full shrink-0 text-sm md:text-base font-bold uppercase tracking-wide"
         >
-          {flags[currentLanguage]}
+          {currentLanguage}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="min-w-[10rem]">
