@@ -73,8 +73,8 @@ export function EntryLegitimacyFlow({ language, onBack }: EntryLegitimacyFlowPro
         return (
           <>
             <div className="space-y-4">
-              <div className="flex items-start gap-4 rounded-3xl bg-secondary p-5 md:p-6">
-                <p className="flex-1 text-secondary-foreground text-base whitespace-pre-line">{t.initialInfo.message}</p>
+              <div className="flex items-start gap-4 rounded-3xl bg-instruction p-5 md:p-6">
+                <p className="flex-1 text-instruction-foreground text-base whitespace-pre-line">{t.initialInfo.message}</p>
                 <AudioPlayer text={t.initialInfo.message} language={language} />
               </div>
             </div>
@@ -94,8 +94,8 @@ export function EntryLegitimacyFlow({ language, onBack }: EntryLegitimacyFlowPro
         return (
           <>
             <div className="space-y-4">
-              <div className="flex items-start gap-4 rounded-3xl bg-secondary p-5 md:p-6">
-                <p className="flex-1 text-secondary-foreground text-base whitespace-pre-line">{t.documents.message}</p>
+              <div className="flex items-start gap-4 rounded-3xl bg-instruction p-5 md:p-6">
+                <p className="flex-1 text-instruction-foreground text-base whitespace-pre-line">{t.documents.message}</p>
                 <AudioPlayer text={t.documents.message} language={language} />
               </div>
             </div>
@@ -115,8 +115,8 @@ export function EntryLegitimacyFlow({ language, onBack }: EntryLegitimacyFlowPro
         return (
           <>
             <div className="space-y-4">
-              <div className="flex items-start gap-4 rounded-3xl bg-secondary p-5 md:p-6">
-                <p className="flex-1 text-secondary-foreground text-base whitespace-pre-line">{t.submission.message}</p>
+              <div className="flex items-start gap-4 rounded-3xl bg-instruction p-5 md:p-6">
+                <p className="flex-1 text-instruction-foreground text-base whitespace-pre-line">{t.submission.message}</p>
                 <AudioPlayer text={t.submission.message} language={language} />
               </div>
             </div>

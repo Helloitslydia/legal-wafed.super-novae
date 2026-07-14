@@ -32,12 +32,15 @@ export const translations = {
     visaRenewalNotice: "The residence visa renewal request must be submitted 60 days before expiration. For work permits, if it expires, it must be renewed. If not, the visa is cancelled.",
     workPermitRenewalFlow: {
       initialQuestion: {
-        question: "Your sponsoring employer must submit a work permit renewal application through the Wafed platform. After the submission of the work permit renewal, did you receive a positive response?",
-        warning: "You need to obtain a new job offer from a sponsoring employer. Have you obtained a new job offer?",
+        instruction: "Your sponsoring employer must submit a work permit renewal application through the Wafed platform.",
+        question: "After the submission of the work permit renewal, did you receive a positive response?",
+        newOfferInstruction: "You need to obtain a new job offer from a sponsoring employer.",
+        newOfferQuestion: "Have you obtained a new job offer?",
         noJobOffer: "Note that you need a job offer to continue the procedure."
       },
       residenceRenewal: {
-        question: "You can now submit the application for the residence renewal. Have you submitted the residence renewal application within 60 days before its expiration, via your sponsoring employer through the Wafed platform?",
+        instruction: "You can now submit the application for the residence renewal.",
+        question: "Have you submitted the residence renewal application within 60 days before its expiration, via your sponsoring employer through the Wafed platform?",
         success: "The competent authority is in charge of the renewal request.",
         warning: "Please check your status with your employer."
       },
@@ -61,7 +64,8 @@ export const translations = {
     foreignWorkerFlow: {
       title: "I am a foreign worker outside Libya and I want to work in Libya (Category A)",
       jobOffer: {
-        question: "You must obtain a job offer from:\n\n- A government agency, or\n\n- A company licensed to work in Libya, or\n\n- A citizen with a licensed individual activity (commercial, craft, or professional).\n\nDo you have a job offer?",
+        instruction: "You must obtain a job offer from:\n\n- A government agency, or\n\n- A company licensed to work in Libya, or\n\n- A citizen with a licensed individual activity (commercial, craft, or professional).",
+        question: "Do you have a job offer?",
         yes: "Yes",
         no: "No",
         noMessage: "You must obtain a job offer. Register on the Wafed platform to search for offers."
@@ -220,12 +224,15 @@ export const translations = {
     visaRenewalNotice: "La demande de renouvellement du visa de résidence doit être soumise 60 jours avant son expiration. Pour le permis travail, s'il expire, il doit être renouvelé. Si ce n'est pas le cas, le visa est annulé",
     workPermitRenewalFlow: {
       initialQuestion: {
-        question: "Votre employeur sponsor doit soumettre une demande de renouvellement de permis de travail via la plateforme Wafed. Après la soumission du renouvellement du permis de travail, avez-vous reçu une réponse positive ?",
-        warning: "Vous devez obtenir une nouvelle offre d'emploi d'un employeur sponsor. Avez-vous obtenu une nouvelle offre d'emploi ?",
+        instruction: "Votre employeur sponsor doit soumettre une demande de renouvellement de permis de travail via la plateforme Wafed.",
+        question: "Après la soumission du renouvellement du permis de travail, avez-vous reçu une réponse positive ?",
+        newOfferInstruction: "Vous devez obtenir une nouvelle offre d'emploi d'un employeur sponsor.",
+        newOfferQuestion: "Avez-vous obtenu une nouvelle offre d'emploi ?",
         noJobOffer: "Notez que vous avez besoin d'une offre d'emploi pour continuer la procédure."
       },
       residenceRenewal: {
-        question: "Vous pouvez maintenant soumettre la demande de renouvellement de résidence. Avez-vous soumis la demande de renouvellement de résidence dans les 60 jours avant son expiration, via votre employeur sponsor sur la plateforme Wafed ?",
+        instruction: "Vous pouvez maintenant soumettre la demande de renouvellement de résidence.",
+        question: "Avez-vous soumis la demande de renouvellement de résidence dans les 60 jours avant son expiration, via votre employeur sponsor sur la plateforme Wafed ?",
         success: "L'autorité compétente est en charge de la demande de renouvellement.",
         warning: "Veuillez vérifier votre statut auprès de votre employeur."
       },
@@ -249,7 +256,8 @@ export const translations = {
     foreignWorkerFlow: {
       title: "Je suis un travailleur étranger hors de Libye et je veux travailler en Libye (Catégorie A)",
       jobOffer: {
-        question: "Vous devez obtenir une offre d'emploi de :\n\n- Une agence gouvernementale, ou\n\n- Une entreprise agréée pour travailler en Libye, ou\n\n- Un citoyen avec une activité individuelle agréée (commerciale, artisanale ou professionnelle).\n\nAvez-vous une offre d'emploi ?",
+        instruction: "Vous devez obtenir une offre d'emploi de :\n\n- Une agence gouvernementale, ou\n\n- Une entreprise agréée pour travailler en Libye, ou\n\n- Un citoyen avec une activité individuelle agréée (commerciale, artisanale ou professionnelle).",
+        question: "Avez-vous une offre d'emploi ?",
         yes: "Oui",
         no: "Non",
         noMessage: "Vous devez obtenir une offre d'emploi. Inscrivez-vous sur la plateforme Wafed pour chercher des offres."
@@ -408,12 +416,15 @@ export const translations = {
     visaRenewalNotice: "يجب تقديم طلب تجديد تأشيرة الإقامة قبل 60 يوماً من انتهائها. بالنسبة لتصريح العمل، إذا انتهت صلاحيته، يجب تجديده. إذا لم يتم ذلك، تُلغى التأشيرة",
     workPermitRenewalFlow: {
       initialQuestion: {
-        question: "يجب على صاحب العمل الكفيل تقديم طلب تجديد تصريح العمل عبر منصة وافد. بعد تقديم طلب تجديد تصريح العمل، هل تلقيت رداً إيجابياً؟",
-        warning: "تحتاج إلى الحصول على عرض عمل جديد من صاحب عمل كفيل. هل حصلت على عرض عمل جديد؟",
+        instruction: "يجب على صاحب العمل الكفيل تقديم طلب تجديد تصريح العمل عبر منصة وافد.",
+        question: "بعد تقديم طلب تجديد تصريح العمل، هل تلقيت رداً إيجابياً؟",
+        newOfferInstruction: "تحتاج إلى الحصول على عرض عمل جديد من صاحب عمل كفيل.",
+        newOfferQuestion: "هل حصلت على عرض عمل جديد؟",
         noJobOffer: "لاحظ أنك تحتاج إلى عرض عمل للمتابعة في الإجراءات."
       },
       residenceRenewal: {
-        question: "يمكنك الآن تقديم طلب تجديد الإقامة. هل قدمت طلب تجديد الإقامة قبل 60 يوماً من انتهائها، عبر صاحب العمل الكفيل على منصة وافد؟",
+        instruction: "يمكنك الآن تقديم طلب تجديد الإقامة.",
+        question: "هل قدمت طلب تجديد الإقامة قبل 60 يوماً من انتهائها، عبر صاحب العمل الكفيل على منصة وافد؟",
         success: "السلطة المختصة مسؤولة عن طلب التجديد.",
         warning: "يرجى التحقق من وضعك مع صاحب العمل."
       },
@@ -437,7 +448,8 @@ export const translations = {
     foreignWorkerFlow: {
       title: "أنا عامل أجنبي خارج ليبيا وأريد العمل في ليبيا (الفئة أ)",
       jobOffer: {
-        question: "يجب عليك الحصول على عرض عمل من:\n\n- جهة حكومية، أو\n\n- شركة مرخصة للعمل في ليبيا، أو\n\n- مواطن لديه نشاط فردي مرخص (تجاري أو حرفي أو مهني).\n\nهل لديك عرض عمل؟",
+        instruction: "يجب عليك الحصول على عرض عمل من:\n\n- جهة حكومية، أو\n\n- شركة مرخصة للعمل في ليبيا، أو\n\n- مواطن لديه نشاط فردي مرخص (تجاري أو حرفي أو مهني).",
+        question: "هل لديك عرض عمل؟",
         yes: "نعم",
         no: "لا",
         noMessage: "يجب عليك الحصول على عرض عمل. سجل في منصة وافد للبحث عن العروض."

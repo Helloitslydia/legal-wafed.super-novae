@@ -56,6 +56,10 @@ export function WorkPermitRenewalFlow({ language, onBack }: WorkPermitRenewalFlo
       case 'initial':
         return (
           <>
+            <div className="flex items-start gap-4 rounded-3xl bg-instruction p-5 md:p-6">
+              <p className="flex-1 text-instruction-foreground text-base">{t.initialQuestion.instruction}</p>
+              <AudioPlayer text={t.initialQuestion.instruction} language={language} />
+            </div>
             <div className="flex items-start justify-between gap-4 rounded-3xl bg-secondary p-5 md:p-6">
               <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">{t.initialQuestion.question}</h2>
               <AudioPlayer text={t.initialQuestion.question} language={language} />
@@ -70,6 +74,10 @@ export function WorkPermitRenewalFlow({ language, onBack }: WorkPermitRenewalFlo
       case 'residenceRenewal':
         return (
           <>
+            <div className="flex items-start gap-4 rounded-3xl bg-instruction p-5 md:p-6">
+              <p className="flex-1 text-instruction-foreground text-base">{t.residenceRenewal.instruction}</p>
+              <AudioPlayer text={t.residenceRenewal.instruction} language={language} />
+            </div>
             <div className="flex items-start justify-between gap-4 rounded-3xl bg-secondary p-5 md:p-6">
               <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">{t.residenceRenewal.question}</h2>
               <AudioPlayer text={t.residenceRenewal.question} language={language} />
@@ -84,9 +92,13 @@ export function WorkPermitRenewalFlow({ language, onBack }: WorkPermitRenewalFlo
       case 'newJobOffer':
         return (
           <>
+            <div className="flex items-start gap-4 rounded-3xl bg-instruction p-5 md:p-6">
+              <p className="flex-1 text-instruction-foreground text-base">{t.initialQuestion.newOfferInstruction}</p>
+              <AudioPlayer text={t.initialQuestion.newOfferInstruction} language={language} />
+            </div>
             <div className="flex items-start justify-between gap-4 rounded-3xl bg-secondary p-5 md:p-6">
-              <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">{t.initialQuestion.warning}</h2>
-              <AudioPlayer text={t.initialQuestion.warning} language={language} />
+              <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">{t.initialQuestion.newOfferQuestion}</h2>
+              <AudioPlayer text={t.initialQuestion.newOfferQuestion} language={language} />
             </div>
             {renderChoices(
               () => setStep('laborApproval'),
