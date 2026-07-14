@@ -130,10 +130,10 @@ export function LeavingLibyaFlow({ language, onBack }: LeavingLibyaFlowProps) {
 
         {step === 3 && (
           <div className="space-y-4">
-            <Card className="p-5 md:p-6 border-transparent bg-instruction shadow-none">
+            <Card className="p-5 md:p-6">
               <div className="flex items-start gap-4">
                 <div className="flex-1">
-                  <p className="text-lg md:text-xl font-semibold leading-relaxed text-instruction-foreground">
+                  <p className="text-lg md:text-xl font-semibold leading-relaxed text-card-foreground">
                     {t.exitVisa.message}
                   </p>
                 </div>
@@ -145,10 +145,10 @@ export function LeavingLibyaFlow({ language, onBack }: LeavingLibyaFlowProps) {
 
         {step === 4 && (
           <div className="space-y-4">
-            <Card className="p-5 md:p-6 border-transparent bg-instruction shadow-none">
+            <Card className="p-5 md:p-6">
               <div className="flex items-start gap-4">
                 <div className="flex-1">
-                  <p className="text-lg md:text-xl font-semibold leading-relaxed text-instruction-foreground">
+                  <p className="text-lg md:text-xl font-semibold leading-relaxed text-card-foreground">
                     {t.residenceVisa.noVisaMessage}
                   </p>
                 </div>

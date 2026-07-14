@@ -56,13 +56,12 @@ export function WorkPermitRenewalFlow({ language, onBack }: WorkPermitRenewalFlo
       case 'initial':
         return (
           <>
-            <div className="flex items-start gap-4 rounded-3xl bg-instruction p-5 md:p-6">
-              <p className="flex-1 text-instruction-foreground text-base">{t.initialQuestion.instruction}</p>
-              <AudioPlayer text={t.initialQuestion.instruction} language={language} />
-            </div>
-            <div className="flex items-start justify-between gap-4 rounded-3xl bg-secondary p-5 md:p-6">
-              <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">{t.initialQuestion.question}</h2>
-              <AudioPlayer text={t.initialQuestion.question} language={language} />
+            <div className="flex items-start gap-4 rounded-3xl border bg-card p-5 md:p-6 shadow-sm">
+              <div className="flex-1 space-y-3">
+                <p className="text-card-foreground text-base">{t.initialQuestion.instruction}</p>
+                <h2 className="text-lg md:text-xl font-semibold leading-relaxed text-card-foreground">{t.initialQuestion.question}</h2>
+              </div>
+              <AudioPlayer text={`${t.initialQuestion.instruction}\n\n${t.initialQuestion.question}`} language={language} />
             </div>
             {renderChoices(
               () => setStep('residenceRenewal'),
@@ -74,13 +73,12 @@ export function WorkPermitRenewalFlow({ language, onBack }: WorkPermitRenewalFlo
       case 'residenceRenewal':
         return (
           <>
-            <div className="flex items-start gap-4 rounded-3xl bg-instruction p-5 md:p-6">
-              <p className="flex-1 text-instruction-foreground text-base">{t.residenceRenewal.instruction}</p>
-              <AudioPlayer text={t.residenceRenewal.instruction} language={language} />
-            </div>
-            <div className="flex items-start justify-between gap-4 rounded-3xl bg-secondary p-5 md:p-6">
-              <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">{t.residenceRenewal.question}</h2>
-              <AudioPlayer text={t.residenceRenewal.question} language={language} />
+            <div className="flex items-start gap-4 rounded-3xl border bg-card p-5 md:p-6 shadow-sm">
+              <div className="flex-1 space-y-3">
+                <p className="text-card-foreground text-base">{t.residenceRenewal.instruction}</p>
+                <h2 className="text-lg md:text-xl font-semibold leading-relaxed text-card-foreground">{t.residenceRenewal.question}</h2>
+              </div>
+              <AudioPlayer text={`${t.residenceRenewal.instruction}\n\n${t.residenceRenewal.question}`} language={language} />
             </div>
             {renderChoices(
               () => setStep('residenceSuccess'),
@@ -92,13 +90,12 @@ export function WorkPermitRenewalFlow({ language, onBack }: WorkPermitRenewalFlo
       case 'newJobOffer':
         return (
           <>
-            <div className="flex items-start gap-4 rounded-3xl bg-instruction p-5 md:p-6">
-              <p className="flex-1 text-instruction-foreground text-base">{t.initialQuestion.newOfferInstruction}</p>
-              <AudioPlayer text={t.initialQuestion.newOfferInstruction} language={language} />
-            </div>
-            <div className="flex items-start justify-between gap-4 rounded-3xl bg-secondary p-5 md:p-6">
-              <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">{t.initialQuestion.newOfferQuestion}</h2>
-              <AudioPlayer text={t.initialQuestion.newOfferQuestion} language={language} />
+            <div className="flex items-start gap-4 rounded-3xl border bg-card p-5 md:p-6 shadow-sm">
+              <div className="flex-1 space-y-3">
+                <p className="text-card-foreground text-base">{t.initialQuestion.newOfferInstruction}</p>
+                <h2 className="text-lg md:text-xl font-semibold leading-relaxed text-card-foreground">{t.initialQuestion.newOfferQuestion}</h2>
+              </div>
+              <AudioPlayer text={`${t.initialQuestion.newOfferInstruction}\n\n${t.initialQuestion.newOfferQuestion}`} language={language} />
             </div>
             {renderChoices(
               () => setStep('laborApproval'),

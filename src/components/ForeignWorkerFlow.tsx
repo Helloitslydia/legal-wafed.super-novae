@@ -89,15 +89,12 @@ export function ForeignWorkerFlow({ language, onBack }: ForeignWorkerFlowProps) 
       case 'jobOffer':
         return (
           <>
-            <div className="space-y-4">
-              <div className="flex items-start gap-4 rounded-3xl bg-instruction p-5 md:p-6">
-                <p className="flex-1 text-instruction-foreground text-base whitespace-pre-line">{t.jobOffer.instruction}</p>
-                <AudioPlayer text={t.jobOffer.instruction} language={language} />
+            <div className="flex items-start gap-4 rounded-3xl border bg-card p-5 md:p-6 shadow-sm">
+              <div className="flex-1 space-y-3">
+                <p className="text-card-foreground text-base whitespace-pre-line">{t.jobOffer.instruction}</p>
+                <h2 className="text-lg md:text-xl font-semibold leading-relaxed text-card-foreground">{t.jobOffer.question}</h2>
               </div>
-            </div>
-            <div className="flex items-start justify-between gap-4 rounded-3xl bg-secondary p-5 md:p-6 mt-6">
-              <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">{t.jobOffer.question}</h2>
-              <AudioPlayer text={t.jobOffer.question} language={language} />
+              <AudioPlayer text={`${t.jobOffer.instruction}\n\n${t.jobOffer.question}`} language={language} />
             </div>
             {renderChoices(
               () => setStep('employerApproval'),
@@ -113,8 +110,8 @@ export function ForeignWorkerFlow({ language, onBack }: ForeignWorkerFlowProps) 
         return (
           <>
             <div className="space-y-4">
-              <div className="flex items-start gap-4 rounded-3xl bg-instruction p-5 md:p-6">
-                <p className="flex-1 text-instruction-foreground text-base">{t.employerApproval.message}</p>
+              <div className="flex items-start gap-4 rounded-3xl border bg-card p-5 md:p-6 shadow-sm">
+                <p className="flex-1 text-card-foreground text-base">{t.employerApproval.message}</p>
                 <AudioPlayer text={t.employerApproval.message} language={language} />
               </div>
             </div>
@@ -136,8 +133,8 @@ export function ForeignWorkerFlow({ language, onBack }: ForeignWorkerFlowProps) 
         return (
           <>
             <div className="space-y-4">
-              <div className="flex items-start gap-4 rounded-3xl bg-instruction p-5 md:p-6">
-                <p className="flex-1 text-instruction-foreground text-base whitespace-pre-line">{t.preliminaryAgreement.message}</p>
+              <div className="flex items-start gap-4 rounded-3xl border bg-card p-5 md:p-6 shadow-sm">
+                <p className="flex-1 text-card-foreground text-base whitespace-pre-line">{t.preliminaryAgreement.message}</p>
                 <AudioPlayer text={t.preliminaryAgreement.message} language={language} />
               </div>
             </div>
@@ -177,8 +174,8 @@ export function ForeignWorkerFlow({ language, onBack }: ForeignWorkerFlowProps) 
         return (
           <>
             <div className="space-y-4">
-              <div className="flex items-start gap-4 rounded-3xl bg-instruction p-5 md:p-6">
-                <p className="flex-1 text-instruction-foreground text-base whitespace-pre-line">{t.finalContract.message}</p>
+              <div className="flex items-start gap-4 rounded-3xl border bg-card p-5 md:p-6 shadow-sm">
+                <p className="flex-1 text-card-foreground text-base whitespace-pre-line">{t.finalContract.message}</p>
                 <AudioPlayer text={t.finalContract.message} language={language} />
               </div>
             </div>
@@ -200,8 +197,8 @@ export function ForeignWorkerFlow({ language, onBack }: ForeignWorkerFlowProps) 
         return (
           <>
             <div className="space-y-4">
-              <div className="flex items-start gap-4 rounded-3xl bg-instruction p-5 md:p-6">
-                <p className="flex-1 text-instruction-foreground text-base whitespace-pre-line">{t.finalContract.refusalMessage}</p>
+              <div className="flex items-start gap-4 rounded-3xl border bg-card p-5 md:p-6 shadow-sm">
+                <p className="flex-1 text-card-foreground text-base whitespace-pre-line">{t.finalContract.refusalMessage}</p>
                 <AudioPlayer text={t.finalContract.refusalMessage} language={language} />
               </div>
             </div>
@@ -245,8 +242,8 @@ export function ForeignWorkerFlow({ language, onBack }: ForeignWorkerFlowProps) 
         return (
           <>
             <div className="space-y-4">
-              <div className="flex items-start gap-4 rounded-3xl bg-instruction p-5 md:p-6">
-                <p className="flex-1 text-instruction-foreground text-base whitespace-pre-line">{t.finalContract.instructions}</p>
+              <div className="flex items-start gap-4 rounded-3xl border bg-card p-5 md:p-6 shadow-sm">
+                <p className="flex-1 text-card-foreground text-base whitespace-pre-line">{t.finalContract.instructions}</p>
                 <AudioPlayer text={t.finalContract.instructions} language={language} />
               </div>
             </div>
