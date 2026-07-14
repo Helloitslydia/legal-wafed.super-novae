@@ -144,6 +144,13 @@ export function SituationChat({ language, options, onSelect }: SituationChatProp
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight max-w-2xl mx-auto leading-snug">
           {t.chatIntro.title}
         </h2>
+        <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
+          {t.chatIntro.anonymityNotice}{' '}
+          {/* NGO name blurred on purpose for the demo */}
+          <span aria-hidden="true" className="blur-[5px] select-none font-semibold">
+            {t.chatIntro.ngoName}
+          </span>
+        </p>
         <div className="flex justify-center">
           <AudioPlayer text={t.chatIntro.title} language={language} />
         </div>
