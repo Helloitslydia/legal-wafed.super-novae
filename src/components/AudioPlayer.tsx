@@ -123,7 +123,7 @@ export function AudioPlayer({ text, language }: AudioPlayerProps) {
         size="icon"
         onClick={handlePlayStop}
         aria-label={status === 'idle' ? (listenLabels[language] ?? listenLabels.en) : (stopLabels[language] ?? stopLabels.en)}
-        className="rounded-full h-12 w-12 md:h-14 md:w-14 shrink-0"
+        className="rounded-full h-12 w-12 md:h-14 md:w-14 shrink-0 bg-card"
       >
         {status === 'idle' ? (
           <Volume2 className="h-6 w-6 md:h-7 md:w-7" />
@@ -141,7 +141,7 @@ export function AudioPlayer({ text, language }: AudioPlayerProps) {
               ? (pauseLabels[language] ?? pauseLabels.en)
               : (resumeLabels[language] ?? resumeLabels.en)
           }
-          className="rounded-full h-9 w-9 md:h-10 md:w-10 shrink-0"
+          className="rounded-full h-9 w-9 md:h-10 md:w-10 shrink-0 bg-card"
         >
           {status === 'speaking' ? <Pause className="h-4 w-4 md:h-5 md:w-5" /> : <Play className="h-4 w-4 md:h-5 md:w-5" />}
         </Button>

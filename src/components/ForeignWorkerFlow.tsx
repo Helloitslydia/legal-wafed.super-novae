@@ -53,10 +53,14 @@ export function ForeignWorkerFlow({ language, onBack }: ForeignWorkerFlowProps) 
         {['yes', 'no'].map((option) => (
           <Card
             key={option}
-            className="p-4 md:p-6 cursor-pointer group transition-colors hover:border-primary/40 hover:bg-accent/40"
+            className="p-4 md:p-5 cursor-pointer group transition-colors hover:border-foreground/25 hover:bg-accent/40"
             onClick={() => option === 'yes' ? yesAction() : noAction()}
           >
-            <div className="flex items-start gap-4">
+            <div className="flex items-center gap-4">
+              <span
+                className="h-6 w-6 shrink-0 rounded-full border-2 border-border bg-card transition-colors group-hover:border-secondary-foreground/60"
+                aria-hidden="true"
+              />
               <div className="flex-1">
                 <p className="text-base md:text-lg font-medium group-hover:text-primary transition-colors">
                   {option === 'yes' 
@@ -85,8 +89,8 @@ export function ForeignWorkerFlow({ language, onBack }: ForeignWorkerFlowProps) 
       case 'jobOffer':
         return (
           <>
-            <div className="flex items-start justify-between gap-4">
-              <h2 className="text-xl md:text-2xl font-semibold">{t.jobOffer.question}</h2>
+            <div className="flex items-start justify-between gap-4 rounded-3xl bg-secondary p-5 md:p-6">
+              <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">{t.jobOffer.question}</h2>
               <AudioPlayer text={t.jobOffer.question} language={language} />
             </div>
             {renderChoices(
@@ -103,13 +107,13 @@ export function ForeignWorkerFlow({ language, onBack }: ForeignWorkerFlowProps) 
         return (
           <>
             <div className="space-y-4">
-              <div className="flex items-start gap-4">
-                <p className="flex-1 text-base">{t.employerApproval.message}</p>
+              <div className="flex items-start gap-4 rounded-3xl bg-secondary p-5 md:p-6">
+                <p className="flex-1 text-secondary-foreground text-base">{t.employerApproval.message}</p>
                 <AudioPlayer text={t.employerApproval.message} language={language} />
               </div>
             </div>
-            <div className="flex items-start justify-between gap-4 mt-6">
-              <h2 className="text-xl md:text-2xl font-semibold">{t.employerApproval.question}</h2>
+            <div className="flex items-start justify-between gap-4 rounded-3xl bg-secondary p-5 md:p-6 mt-6">
+              <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">{t.employerApproval.question}</h2>
               <AudioPlayer text={t.employerApproval.question} language={language} />
             </div>
             {renderChoices(
@@ -126,13 +130,13 @@ export function ForeignWorkerFlow({ language, onBack }: ForeignWorkerFlowProps) 
         return (
           <>
             <div className="space-y-4">
-              <div className="flex items-start gap-4">
-                <p className="flex-1 text-base whitespace-pre-line">{t.preliminaryAgreement.message}</p>
+              <div className="flex items-start gap-4 rounded-3xl bg-secondary p-5 md:p-6">
+                <p className="flex-1 text-secondary-foreground text-base whitespace-pre-line">{t.preliminaryAgreement.message}</p>
                 <AudioPlayer text={t.preliminaryAgreement.message} language={language} />
               </div>
             </div>
-            <div className="flex items-start justify-between gap-4 mt-6">
-              <h2 className="text-xl md:text-2xl font-semibold">{t.preliminaryAgreement.question}</h2>
+            <div className="flex items-start justify-between gap-4 rounded-3xl bg-secondary p-5 md:p-6 mt-6">
+              <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">{t.preliminaryAgreement.question}</h2>
               <AudioPlayer text={t.preliminaryAgreement.question} language={language} />
             </div>
             {renderChoices(
@@ -148,8 +152,8 @@ export function ForeignWorkerFlow({ language, onBack }: ForeignWorkerFlowProps) 
       case 'entryTime':
         return (
           <>
-            <div className="flex items-start justify-between gap-4">
-              <h2 className="text-xl md:text-2xl font-semibold">{t.entryTime.question}</h2>
+            <div className="flex items-start justify-between gap-4 rounded-3xl bg-secondary p-5 md:p-6">
+              <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">{t.entryTime.question}</h2>
               <AudioPlayer text={t.entryTime.question} language={language} />
             </div>
             {renderChoices(
@@ -167,13 +171,13 @@ export function ForeignWorkerFlow({ language, onBack }: ForeignWorkerFlowProps) 
         return (
           <>
             <div className="space-y-4">
-              <div className="flex items-start gap-4">
-                <p className="flex-1 text-base whitespace-pre-line">{t.finalContract.message}</p>
+              <div className="flex items-start gap-4 rounded-3xl bg-secondary p-5 md:p-6">
+                <p className="flex-1 text-secondary-foreground text-base whitespace-pre-line">{t.finalContract.message}</p>
                 <AudioPlayer text={t.finalContract.message} language={language} />
               </div>
             </div>
-            <div className="flex items-start justify-between gap-4 mt-6">
-              <h2 className="text-xl md:text-2xl font-semibold">{t.finalContract.question}</h2>
+            <div className="flex items-start justify-between gap-4 rounded-3xl bg-secondary p-5 md:p-6 mt-6">
+              <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">{t.finalContract.question}</h2>
               <AudioPlayer text={t.finalContract.question} language={language} />
             </div>
             {renderChoices(
@@ -190,13 +194,13 @@ export function ForeignWorkerFlow({ language, onBack }: ForeignWorkerFlowProps) 
         return (
           <>
             <div className="space-y-4">
-              <div className="flex items-start gap-4">
-                <p className="flex-1 text-base whitespace-pre-line">{t.finalContract.refusalMessage}</p>
+              <div className="flex items-start gap-4 rounded-3xl bg-secondary p-5 md:p-6">
+                <p className="flex-1 text-secondary-foreground text-base whitespace-pre-line">{t.finalContract.refusalMessage}</p>
                 <AudioPlayer text={t.finalContract.refusalMessage} language={language} />
               </div>
             </div>
-            <div className="flex items-start justify-between gap-4 mt-6">
-              <h2 className="text-xl md:text-2xl font-semibold">{t.finalContract.newOfferQuestion}</h2>
+            <div className="flex items-start justify-between gap-4 rounded-3xl bg-secondary p-5 md:p-6 mt-6">
+              <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">{t.finalContract.newOfferQuestion}</h2>
               <AudioPlayer text={t.finalContract.newOfferQuestion} language={language} />
             </div>
             {renderChoices(
@@ -213,8 +217,8 @@ export function ForeignWorkerFlow({ language, onBack }: ForeignWorkerFlowProps) 
       case 'approval':
         return (
           <>
-            <div className="flex items-start justify-between gap-4">
-              <h2 className="text-xl md:text-2xl font-semibold">{t.finalContract.approvalQuestion}</h2>
+            <div className="flex items-start justify-between gap-4 rounded-3xl bg-secondary p-5 md:p-6">
+              <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">{t.finalContract.approvalQuestion}</h2>
               <AudioPlayer text={t.finalContract.approvalQuestion} language={language} />
             </div>
             {renderChoices(
@@ -235,13 +239,13 @@ export function ForeignWorkerFlow({ language, onBack }: ForeignWorkerFlowProps) 
         return (
           <>
             <div className="space-y-4">
-              <div className="flex items-start gap-4">
-                <p className="flex-1 text-base whitespace-pre-line">{t.finalContract.instructions}</p>
+              <div className="flex items-start gap-4 rounded-3xl bg-secondary p-5 md:p-6">
+                <p className="flex-1 text-secondary-foreground text-base whitespace-pre-line">{t.finalContract.instructions}</p>
                 <AudioPlayer text={t.finalContract.instructions} language={language} />
               </div>
             </div>
-            <div className="flex items-start justify-between gap-4 mt-6">
-              <h2 className="text-xl md:text-2xl font-semibold">{t.finalContract.permitQuestion}</h2>
+            <div className="flex items-start justify-between gap-4 rounded-3xl bg-secondary p-5 md:p-6 mt-6">
+              <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">{t.finalContract.permitQuestion}</h2>
               <AudioPlayer text={t.finalContract.permitQuestion} language={language} />
             </div>
             {renderChoices(
@@ -256,10 +260,10 @@ export function ForeignWorkerFlow({ language, onBack }: ForeignWorkerFlowProps) 
       case 'success':
         return (
           <div className="space-y-4">
-            <Card className="p-4 md:p-6 border-green-200 bg-green-50">
+            <Card className="p-5 md:p-6 border-transparent bg-secondary shadow-none">
               <div className="flex items-start gap-4">
                 <div className="flex-1">
-                  <p className="text-lg md:text-xl font-medium text-green-800 leading-relaxed">
+                  <p className="text-lg md:text-xl font-medium text-secondary-foreground leading-relaxed">
                     {t.finalContract.success}
                   </p>
                 </div>
@@ -272,7 +276,7 @@ export function ForeignWorkerFlow({ language, onBack }: ForeignWorkerFlowProps) 
   };
 
   return (
-    <Card className="p-6 md:p-8">
+    <Card className="border-0 bg-transparent p-0 shadow-none">
       <div className="space-y-6">
         {renderQuestion()}
         <div className="flex justify-between">

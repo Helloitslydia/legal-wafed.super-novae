@@ -39,12 +39,12 @@ export function LeavingLibyaFlow({ language, onBack }: LeavingLibyaFlowProps) {
   };
 
   return (
-    <Card className="p-6 md:p-8">
+    <Card className="border-0 bg-transparent p-0 shadow-none">
       <div className="space-y-6">
         {step === 1 && (
           <>
-            <div className="flex items-start justify-between gap-4">
-              <h2 className="text-xl md:text-2xl font-semibold">
+            <div className="flex items-start justify-between gap-4 rounded-3xl bg-secondary p-5 md:p-6">
+              <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">
                 {t.residenceVisa.question}
               </h2>
               <AudioPlayer text={t.residenceVisa.question} language={language} />
@@ -54,10 +54,14 @@ export function LeavingLibyaFlow({ language, onBack }: LeavingLibyaFlowProps) {
               {['yes', 'no'].map((option) => (
                 <Card
                   key={option}
-                  className="p-4 md:p-6 cursor-pointer group transition-colors hover:border-primary/40 hover:bg-accent/40"
+                  className="p-4 md:p-5 cursor-pointer group transition-colors hover:border-foreground/25 hover:bg-accent/40"
                   onClick={() => handleResidenceVisa(option === 'yes')}
                 >
-                  <div className="flex items-start gap-4">
+                  <div className="flex items-center gap-4">
+                    <span
+                      className="h-6 w-6 shrink-0 rounded-full border-2 border-border bg-card transition-colors group-hover:border-secondary-foreground/60"
+                      aria-hidden="true"
+                    />
                     <div className="flex-1">
                       <p className="text-base md:text-lg font-medium group-hover:text-primary transition-colors">
                         {option === 'yes' 
@@ -80,8 +84,8 @@ export function LeavingLibyaFlow({ language, onBack }: LeavingLibyaFlowProps) {
 
         {step === 2 && (
           <>
-            <div className="flex items-start justify-between gap-4">
-              <h2 className="text-xl md:text-2xl font-semibold">
+            <div className="flex items-start justify-between gap-4 rounded-3xl bg-secondary p-5 md:p-6">
+              <h2 className="flex-1 text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">
                 {t.employerDeclaration.question}
               </h2>
               <AudioPlayer text={t.employerDeclaration.question} language={language} />
@@ -91,10 +95,14 @@ export function LeavingLibyaFlow({ language, onBack }: LeavingLibyaFlowProps) {
               {['yes', 'no'].map((option) => (
                 <Card
                   key={option}
-                  className="p-4 md:p-6 cursor-pointer group transition-colors hover:border-primary/40 hover:bg-accent/40"
+                  className="p-4 md:p-5 cursor-pointer group transition-colors hover:border-foreground/25 hover:bg-accent/40"
                   onClick={() => handleEmployerDeclaration(option === 'yes')}
                 >
-                  <div className="flex items-start gap-4">
+                  <div className="flex items-center gap-4">
+                    <span
+                      className="h-6 w-6 shrink-0 rounded-full border-2 border-border bg-card transition-colors group-hover:border-secondary-foreground/60"
+                      aria-hidden="true"
+                    />
                     <div className="flex-1">
                       <p className="text-base md:text-lg font-medium group-hover:text-primary transition-colors">
                         {option === 'yes' 
@@ -122,10 +130,10 @@ export function LeavingLibyaFlow({ language, onBack }: LeavingLibyaFlowProps) {
 
         {step === 3 && (
           <div className="space-y-4">
-            <Card className="p-4 md:p-6">
+            <Card className="p-5 md:p-6 border-transparent bg-secondary shadow-none">
               <div className="flex items-start gap-4">
                 <div className="flex-1">
-                  <p className="text-xl md:text-2xl font-semibold">
+                  <p className="text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">
                     {t.exitVisa.message}
                   </p>
                 </div>
@@ -137,10 +145,10 @@ export function LeavingLibyaFlow({ language, onBack }: LeavingLibyaFlowProps) {
 
         {step === 4 && (
           <div className="space-y-4">
-            <Card className="p-4 md:p-6">
+            <Card className="p-5 md:p-6 border-transparent bg-secondary shadow-none">
               <div className="flex items-start gap-4">
                 <div className="flex-1">
-                  <p className="text-xl md:text-2xl font-semibold">
+                  <p className="text-lg md:text-xl font-semibold leading-relaxed text-secondary-foreground">
                     {t.residenceVisa.noVisaMessage}
                   </p>
                 </div>
