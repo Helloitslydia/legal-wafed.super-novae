@@ -15,11 +15,13 @@ export function Header({ language, onLanguageChange }: HeaderProps) {
       <div className="container mx-auto px-4 py-4 md:py-5">
         <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
           <div className="flex items-center">
-            <img
-              src="https://0976be0a835bf13886cd1d6009c40e57.cdn.bubble.io/f1784051386598x566759155093209860/abvius-logo.png"
-              alt="Logo"
-              className="h-5 sm:h-6 md:h-7 w-auto object-contain"
-            />
+            <a href="/" aria-label="Back to home">
+              <img
+                src="https://0976be0a835bf13886cd1d6009c40e57.cdn.bubble.io/f1784051386598x566759155093209860/abvius-logo.png"
+                alt="Logo"
+                className="h-5 sm:h-6 md:h-7 w-auto object-contain"
+              />
+            </a>
           </div>
           <div className="flex-1 flex justify-center">
             <h1 className="text-base sm:text-lg md:text-xl font-bold text-foreground tracking-tight text-center max-w-[600px] leading-normal">
