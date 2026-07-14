@@ -3,7 +3,7 @@ import { Layout } from '@/components/Layout';
 import { OptionsGrid } from '@/components/OptionsGrid';
 
 export default function App() {
-  const [language, setLanguage] = useState('fr');
+  const [language, setLanguage] = useState('en');
 
   return (
     <Layout language={language} onLanguageChange={setLanguage}>
