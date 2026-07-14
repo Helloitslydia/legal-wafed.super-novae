@@ -17,6 +17,8 @@ export const translations = {
     workPermitRenewal: "I work in Libya and want to renew my work permit and residence visa",
     chatIntro: {
       title: "This is a platform for the regularization of foreign workers. Describe your situation",
+      anonymityNotice: "This platform is 100% anonymous and supported by the NGO",
+      ngoName: "SuperNNNNN",
       placeholder: "Describe your situation here...",
       send: "Send",
       dictate: "Dictate your situation",
@@ -203,6 +205,8 @@ export const translations = {
     workPermitRenewal: "Je travaille en Libye et je souhaite renouveler mon permis de travail et mon visa de résidence",
     chatIntro: {
       title: "Ceci est une plateforme pour la régularisation des travailleurs étrangers. Décrivez votre situation",
+      anonymityNotice: "Cette plateforme est 100% anonyme et soutenue par l'ONG",
+      ngoName: "SuperNNNNN",
       placeholder: "Décrivez votre situation ici...",
       send: "Envoyer",
       dictate: "Dicter votre situation",
@@ -389,6 +393,8 @@ export const translations = {
     workPermitRenewal: "أعمل في ليبيا وأريد تجديد تصريح العمل وتأشيرة الإقامة",
     chatIntro: {
       title: "هذه منصة لتسوية أوضاع العمال الأجانب. صف وضعك",
+      anonymityNotice: "هذه المنصة مجهولة الهوية 100% ومدعومة من المنظمة غير الحكومية",
+      ngoName: "SuperNNNNN",
       placeholder: "صف وضعك هنا...",
       send: "إرسال",
       dictate: "أملِ وضعك",
