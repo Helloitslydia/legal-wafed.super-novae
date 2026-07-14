@@ -89,9 +89,11 @@ export function VisaRenewalFlow({ language, onBack }: VisaRenewalFlowProps) {
               >
                 <div className="flex items-center gap-4">
                   <span
-                    className="h-6 w-6 shrink-0 rounded-full border-2 border-border bg-card transition-colors group-hover:border-secondary-foreground/60"
+                    className="shrink-0 text-base md:text-lg font-bold transition-colors group-hover:text-primary"
                     aria-hidden="true"
-                  />
+                  >
+                    →
+                  </span>
                   <div className="flex-1">
                     <p className="text-base md:text-lg font-medium group-hover:text-primary transition-colors">
                       {t.visaStatus[option]}
@@ -146,10 +148,16 @@ export function VisaRenewalFlow({ language, onBack }: VisaRenewalFlowProps) {
                   className="p-4 md:p-5 cursor-pointer group transition-colors hover:border-foreground/25 hover:bg-accent/40"
                   onClick={() => handleAnswer(option === 'yes')}
                 >
-                  <div className="flex items-start gap-4">
+                  <div className="flex items-center gap-4">
+                    <span
+                      className="shrink-0 text-base md:text-lg font-bold transition-colors group-hover:text-primary"
+                      aria-hidden="true"
+                    >
+                      →
+                    </span>
                     <div className="flex-1">
                       <p className="text-base md:text-lg font-medium group-hover:text-primary transition-colors">
-                        {option === 'yes' 
+                        {option === 'yes'
                           ? (language === 'ar' ? 'نعم' : language === 'fr' ? 'Oui' : 'Yes')
                           : (language === 'ar' ? 'لا' : language === 'fr' ? 'Non' : 'No')}
                       </p>
