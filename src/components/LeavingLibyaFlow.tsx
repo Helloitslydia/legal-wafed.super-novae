@@ -59,9 +59,11 @@ export function LeavingLibyaFlow({ language, onBack }: LeavingLibyaFlowProps) {
                 >
                   <div className="flex items-center gap-4">
                     <span
-                      className="h-6 w-6 shrink-0 rounded-full border-2 border-border bg-card transition-colors group-hover:border-secondary-foreground/60"
+                      className="shrink-0 text-base md:text-lg font-bold transition-colors group-hover:text-primary"
                       aria-hidden="true"
-                    />
+                    >
+                      →
+                    </span>
                     <div className="flex-1">
                       <p className="text-base md:text-lg font-medium group-hover:text-primary transition-colors">
                         {option === 'yes' 
@@ -100,9 +102,11 @@ export function LeavingLibyaFlow({ language, onBack }: LeavingLibyaFlowProps) {
                 >
                   <div className="flex items-center gap-4">
                     <span
-                      className="h-6 w-6 shrink-0 rounded-full border-2 border-border bg-card transition-colors group-hover:border-secondary-foreground/60"
+                      className="shrink-0 text-base md:text-lg font-bold transition-colors group-hover:text-primary"
                       aria-hidden="true"
-                    />
+                    >
+                      →
+                    </span>
                     <div className="flex-1">
                       <p className="text-base md:text-lg font-medium group-hover:text-primary transition-colors">
                         {option === 'yes' 
