@@ -27,7 +27,7 @@ export const translations = {
       micUnsupported: "Voice dictation is not supported by your browser.",
       noMatch: "We couldn't identify your situation. Please choose one of the cases below.",
       suggestionFound: "Based on your description, this case seems to match your situation:",
-      suggestionsLabel: "Or choose your situation:"
+      suggestionsLabel: "Choose your situation:"
     },
     visaRenewalNotice: "The residence visa renewal request must be submitted 60 days before expiration. For work permits, if it expires, it must be renewed. If not, the visa is cancelled.",
     workPermitRenewalFlow: {
