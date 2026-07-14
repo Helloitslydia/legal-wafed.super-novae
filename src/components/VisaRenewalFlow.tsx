@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { AudioPlayer } from './AudioPlayer';
+import { FlowNavigation } from './FlowNavigation';
+import { FlowWarning } from './FlowWarning';
 import { translations } from '@/lib/translations';
 
 interface VisaRenewalFlowProps {
@@ -98,11 +99,6 @@ export function VisaRenewalFlow({ language, onBack }: VisaRenewalFlowProps) {
                     <p className="text-base md:text-lg font-medium group-hover:text-primary transition-colors">
                       {t.visaStatus[option]}
                     </p>
-                    {option === 'residenceNo' && showWarning && (
-                      <p className="mt-2 text-sm text-muted-foreground">
-                        {t.visaStatus.residenceWarning}
-                      </p>
-                    )}
                   </div>
                   <AudioPlayer
                     text={t.visaStatus[option]}
@@ -113,17 +109,18 @@ export function VisaRenewalFlow({ language, onBack }: VisaRenewalFlowProps) {
             ))}
           </div>
 
-          <div className="flex justify-between">
-            <Button
-              onClick={() => {
-                setShowResidenceQuestion(false);
-                setShowWarning(false);
-              }}
-              className="text-base"
-            >
-              {translations[language].previous}
-            </Button>
-          </div>
+          {showWarning && (
+            <FlowWarning message={t.visaStatus.residenceWarning} language={language} />
+          )}
+
+          <FlowNavigation
+            language={language}
+            onHome={onBack}
+            onPrevious={() => {
+              setShowResidenceQuestion(false);
+              setShowWarning(false);
+            }}
+          />
         </div>
       </Card>
     );
@@ -161,11 +158,6 @@ export function VisaRenewalFlow({ language, onBack }: VisaRenewalFlowProps) {
                           ? (language === 'ar' ? 'نعم' : language === 'fr' ? 'Oui' : 'Yes')
                           : (language === 'ar' ? 'لا' : language === 'fr' ? 'Non' : 'No')}
                       </p>
-                      {option === 'no' && showWarning && (
-                        <p className="mt-2 text-sm text-muted-foreground">
-                          {question.warning}
-                        </p>
-                      )}
                     </div>
                     <AudioPlayer
                       text={option === 'yes' 
@@ -177,6 +169,10 @@ export function VisaRenewalFlow({ language, onBack }: VisaRenewalFlowProps) {
                 </Card>
               ))}
             </div>
+
+            {showWarning && question.warning && (
+              <FlowWarning message={question.warning} language={language} />
+            )}
           </>
         )}
 
@@ -231,23 +227,11 @@ export function VisaRenewalFlow({ language, onBack }: VisaRenewalFlowProps) {
           </div>
         )}
 
-        <div className="flex justify-between">
-          <Button
-            onClick={onBack}
-            className="text-base"
-          >
-            {translations[language].home}
-          </Button>
-          {step > 1 && (
-            <Button
-              onClick={handlePrevious}
-              variant="outline"
-              className="text-base"
-            >
-              {translations[language].previous}
-            </Button>
-          )}
-        </div>
+        <FlowNavigation
+          language={language}
+          onHome={onBack}
+          onPrevious={step > 1 ? handlePrevious : undefined}
+        />
       </div>
     </Card>
   );

@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { AudioPlayer } from './AudioPlayer';
+import { FlowNavigation } from './FlowNavigation';
+import { FlowWarning } from './FlowWarning';
 import { translations } from '@/lib/translations';
 
 interface LeavingLibyaFlowProps {
@@ -113,11 +114,6 @@ export function LeavingLibyaFlow({ language, onBack }: LeavingLibyaFlowProps) {
                           ? (language === 'ar' ? 'نعم' : language === 'fr' ? 'Oui' : 'Yes')
                           : (language === 'ar' ? 'لا' : language === 'fr' ? 'Non' : 'No')}
                       </p>
-                      {option === 'no' && showWarning && (
-                        <p className="mt-2 text-sm text-muted-foreground">
-                          {t.employerDeclaration.warning}
-                        </p>
-                      )}
                     </div>
                     <AudioPlayer
                       text={option === 'yes' 
@@ -129,6 +125,10 @@ export function LeavingLibyaFlow({ language, onBack }: LeavingLibyaFlowProps) {
                 </Card>
               ))}
             </div>
+
+            {showWarning && (
+              <FlowWarning message={t.employerDeclaration.warning} language={language} />
+            )}
           </>
         )}
 
@@ -162,24 +162,11 @@ export function LeavingLibyaFlow({ language, onBack }: LeavingLibyaFlowProps) {
           </div>
         )}
 
-        <div className="flex justify-between">
-          {step > 1 ? (
-            <Button
-              onClick={handlePrevious}
-              variant="outline"
-              className="text-base"
-            >
-              {translations[language].previous}
-            </Button>
-          ) : (
-            <Button
-              onClick={onBack}
-              className="text-base"
-            >
-              {translations[language].home}
-            </Button>
-          )}
-        </div>
+        <FlowNavigation
+          language={language}
+          onHome={onBack}
+          onPrevious={step > 1 ? handlePrevious : undefined}
+        />
       </div>
     </Card>
   );

@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { AudioPlayer } from './AudioPlayer';
+import { FlowNavigation } from './FlowNavigation';
+import { FlowWarning } from './FlowWarning';
 import { translations } from '@/lib/translations';
 import { Language } from '@/types';
 
@@ -82,11 +83,6 @@ export function EmployerChangeFlow({ language, onBack }: EmployerChangeFlowProps
                           ? (language === 'ar' ? 'نعم' : language === 'fr' ? 'Oui' : 'Yes')
                           : (language === 'ar' ? 'لا' : language === 'fr' ? 'Non' : 'No')}
                       </p>
-                      {option === 'no' && showWarning && (
-                        <p className="mt-2 text-sm text-muted-foreground">
-                          {question.warning}
-                        </p>
-                      )}
                     </div>
                     <AudioPlayer
                       text={option === 'yes' 
@@ -98,6 +94,10 @@ export function EmployerChangeFlow({ language, onBack }: EmployerChangeFlowProps
                 </Card>
               ))}
             </div>
+
+            {showWarning && (
+              <FlowWarning message={question.warning} language={language} />
+            )}
           </>
         )}
 
@@ -116,24 +116,11 @@ export function EmployerChangeFlow({ language, onBack }: EmployerChangeFlowProps
           </div>
         )}
 
-        <div className="flex justify-between">
-          {step > 1 ? (
-            <Button
-              onClick={handlePrevious}
-              variant="outline"
-              className="text-base"
-            >
-              {translations[language as keyof typeof translations].previous}
-            </Button>
-          ) : (
-            <Button
-              onClick={onBack}
-              className="text-base"
-            >
-              {translations[language as keyof typeof translations].home}
-            </Button>
-          )}
-        </div>
+        <FlowNavigation
+          language={language}
+          onHome={onBack}
+          onPrevious={step > 1 ? handlePrevious : undefined}
+        />
       </div>
     </Card>
   );
