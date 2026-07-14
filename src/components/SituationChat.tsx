@@ -149,6 +149,30 @@ export function SituationChat({ language, options, onSelect }: SituationChatProp
         </div>
       </div>
 
+      <div className="space-y-3">
+        <p className="text-sm text-muted-foreground text-center">
+          {t.chatIntro.suggestionsLabel}
+        </p>
+        <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+          {options.map(({ key, icon }) => (
+            <button
+              key={key}
+              type="button"
+              onClick={() => onSelect(key)}
+              className={cn(
+                'inline-flex max-w-full items-center gap-2.5 rounded-full border px-5 py-2.5 text-sm sm:text-base text-start transition-colors',
+                suggestedKey === key
+                  ? 'border-primary bg-primary/10 ring-2 ring-primary/40'
+                  : 'border-border bg-secondary/50 hover:bg-accent hover:border-foreground/25'
+              )}
+            >
+              <span aria-hidden="true">{icon}</span>
+              <span>{t[key]}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
       <form onSubmit={handleSubmit} className="max-w-2xl mx-auto">
         <div className="rounded-3xl border border-border bg-card shadow-sm focus-within:ring-2 focus-within:ring-ring focus-within:border-transparent p-3">
           <textarea
@@ -205,30 +229,6 @@ export function SituationChat({ language, options, onSelect }: SituationChatProp
           {t.chatIntro.suggestionFound}
         </p>
       )}
-
-      <div className="space-y-3">
-        <p className="text-sm text-muted-foreground text-center">
-          {t.chatIntro.suggestionsLabel}
-        </p>
-        <div className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto">
-          {options.map(({ key, icon }) => (
-            <button
-              key={key}
-              type="button"
-              onClick={() => onSelect(key)}
-              className={cn(
-                'inline-flex max-w-full items-center gap-2 rounded-full border px-3.5 py-2 text-xs sm:text-sm text-start transition-colors',
-                suggestedKey === key
-                  ? 'border-primary bg-primary/10 ring-2 ring-primary/40'
-                  : 'border-border bg-secondary/50 hover:bg-accent hover:border-foreground/25'
-              )}
-            >
-              <span aria-hidden="true">{icon}</span>
-              <span>{t[key]}</span>
-            </button>
-          ))}
-        </div>
-      </div>
     </div>
   );
 }
