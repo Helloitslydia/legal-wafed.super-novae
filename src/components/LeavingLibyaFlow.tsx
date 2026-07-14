@@ -54,7 +54,7 @@ export function LeavingLibyaFlow({ language, onBack }: LeavingLibyaFlowProps) {
               {['yes', 'no'].map((option) => (
                 <Card
                   key={option}
-                  className="p-4 md:p-6 hover:shadow-md transition-shadow cursor-pointer group"
+                  className="p-4 md:p-6 cursor-pointer group transition-colors hover:border-primary/40 hover:bg-accent/40"
                   onClick={() => handleResidenceVisa(option === 'yes')}
                 >
                   <div className="flex items-start gap-4">
@@ -91,7 +91,7 @@ export function LeavingLibyaFlow({ language, onBack }: LeavingLibyaFlowProps) {
               {['yes', 'no'].map((option) => (
                 <Card
                   key={option}
-                  className="p-4 md:p-6 hover:shadow-md transition-shadow cursor-pointer group"
+                  className="p-4 md:p-6 cursor-pointer group transition-colors hover:border-primary/40 hover:bg-accent/40"
                   onClick={() => handleEmployerDeclaration(option === 'yes')}
                 >
                   <div className="flex items-start gap-4">

@@ -53,7 +53,7 @@ export function ForeignWorkerFlow({ language, onBack }: ForeignWorkerFlowProps) 
         {['yes', 'no'].map((option) => (
           <Card
             key={option}
-            className="p-4 md:p-6 hover:shadow-md transition-shadow cursor-pointer group"
+            className="p-4 md:p-6 cursor-pointer group transition-colors hover:border-primary/40 hover:bg-accent/40"
             onClick={() => option === 'yes' ? yesAction() : noAction()}
           >
             <div className="flex items-start gap-4">
@@ -256,10 +256,10 @@ export function ForeignWorkerFlow({ language, onBack }: ForeignWorkerFlowProps) 
       case 'success':
         return (
           <div className="space-y-4">
-            <Card className="p-4 md:p-6">
+            <Card className="p-4 md:p-6 border-green-200 bg-green-50">
               <div className="flex items-start gap-4">
                 <div className="flex-1">
-                  <p className="text-xl md:text-2xl font-semibold text-green-600">
+                  <p className="text-lg md:text-xl font-medium text-green-800 leading-relaxed">
                     {t.finalContract.success}
                   </p>
                 </div>

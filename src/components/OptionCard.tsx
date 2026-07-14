@@ -16,9 +16,17 @@ export function OptionCard({ icon, text, notice, language, onClick }: OptionCard
   };
 
   return (
-    <Card 
-      className="group hover:shadow-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1"
+    <Card
+      role="button"
+      tabIndex={0}
+      className="group cursor-pointer transition-colors hover:border-primary/40 hover:bg-accent/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
       onClick={onClick}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onClick();
+        }
+      }}
     >
       <div className="p-6 md:p-8 space-y-4">
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">

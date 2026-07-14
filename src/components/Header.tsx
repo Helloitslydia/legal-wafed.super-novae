@@ -13,7 +13,7 @@ export function Header({ language, onLanguageChange }: HeaderProps) {
   const t = translations[language];
 
   return (
-    <header className="w-full bg-white shadow-md sticky top-0 z-10">
+    <header className="w-full bg-card border-b shadow-sm sticky top-0 z-10">
       <div className="container mx-auto px-4 py-4 md:py-6">
         <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
           <div className="flex items-center gap-4">
@@ -23,10 +23,11 @@ export function Header({ language, onLanguageChange }: HeaderProps) {
               className="h-12 w-12"
               asChild
             >
-              <a 
+              <a
                 href="https://tandem-project.super-novae.org/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Tandem Project"
               >
                 <ArrowLeft className="h-6 w-6" />
               </a>
