@@ -19,7 +19,7 @@ export const translations = {
       title: "This is a platform for the regularization of foreign workers. Describe your situation",
       anonymityNotice: "This platform is 100% anonymous and supported by the NGO",
       ngoName: "SuperNNNNN",
-      placeholder: "Describe your situation here...",
+      placeholder: "Or describe your situation here...",
       send: "Send",
       dictate: "Dictate your situation",
       stopDictation: "Stop dictation",
