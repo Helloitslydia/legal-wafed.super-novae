@@ -52,6 +52,21 @@ A multilingual web application to guide foreign workers through legal procedures
 - I want a responsive interface that works on any screen size
 - I want to easily navigate through different sections
 
+## Text-to-Speech
+
+The "Listen" buttons use the [VoiceRSS](https://www.voicerss.org) API, which
+provides consistent English, French and Arabic voices on every device. Get a
+free API key at https://www.voicerss.org/registration.aspx and set it in a
+`.env` file (see `.env.example`):
+
+```bash
+VITE_VOICERSS_KEY=your-key-here
+```
+
+Without a key (or if the request fails), the app automatically falls back to
+the browser's built-in `speechSynthesis`, whose voices vary by device and may
+be missing for Arabic.
+
 ## Getting Started
 
 ```bash

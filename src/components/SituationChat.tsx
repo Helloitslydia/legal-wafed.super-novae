@@ -141,9 +141,12 @@ export function SituationChat({ language, options, onSelect }: SituationChatProp
   return (
     <div dir={language === 'ar' ? 'rtl' : 'ltr'} className="space-y-8 pt-4 md:pt-10">
       <div className="text-center space-y-3">
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight max-w-2xl mx-auto leading-snug">
-          {t.chatIntro.title}
-        </h2>
+        <div className="flex items-center justify-center gap-2 max-w-2xl mx-auto">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight leading-snug">
+            {t.chatIntro.title}
+          </h2>
+          <AudioPlayer text={t.chatIntro.title} language={language} size="compact" />
+        </div>
         <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
           {t.chatIntro.anonymityNotice}{' '}
           {/* NGO name blurred on purpose for the demo */}
@@ -151,9 +154,6 @@ export function SituationChat({ language, options, onSelect }: SituationChatProp
             {t.chatIntro.ngoName}
           </span>
         </p>
-        <div className="flex justify-center">
-          <AudioPlayer text={t.chatIntro.title} language={language} />
-        </div>
       </div>
 
       <div className="space-y-3">
