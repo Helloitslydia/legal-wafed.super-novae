@@ -33,10 +33,6 @@ export default {
           DEFAULT: 'hsl(var(--secondary))',
           foreground: 'hsl(var(--secondary-foreground))',
         },
-        instruction: {
-          DEFAULT: 'hsl(var(--instruction))',
-          foreground: 'hsl(var(--instruction-foreground))',
-        },
         muted: {
           DEFAULT: 'hsl(var(--muted))',
           foreground: 'hsl(var(--muted-foreground))',
